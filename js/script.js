@@ -8,11 +8,6 @@ let res = document.querySelector("#res")
 let clear = document.querySelector("#button-clear")
 let res2 = document.querySelector("#res2")
  
-
-var dado6 = Math.floor((Math.random() * 6) + 1)
-var dado20 = Math.floor((Math.random() * 20) + 1)
-var dado100 = Math.floor((Math.random() * 100) + 1)
-
 button4.addEventListener("click", ()=>{
     var dado4 = Math.floor((Math.random() * 4) + 1)
     res.innerHTML = `${dado4}` 
@@ -27,7 +22,6 @@ button4.addEventListener("click", ()=>{
         res.style = 'none'
     }
 })
-
 
 button6.addEventListener("click", ()=>{
     var dado6 = Math.floor((Math.random() * 6) + 1)
