@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body *{
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+body{
+    background-image: url(../assets/bg.svg);
+    background-color: rgba(80, 48, 48, 0.801);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+header{
+    background-color: #2C211E;
+    padding: 26px 0px;
+    box-shadow: rgba(0, 0, 0, 0.500) 0px 4px 6px;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+nav ul a{
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    padding:10px 40px;
+    transition: .2s;
+    border-radius: 4px;
+}
+
+main h1{
+    margin: 81px 0px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 
+             -1px -1px 0px black, 
+             -1px 1px 0px black,                    
+              1px -1px 0px black,                  
+              1px 0px 0px black;
+}
+
+#box{
+    background-color: #2c211ec0;
+    width: 588px;
+    border: black 2px solid;
+    border-radius: 4px;
+    margin: 82px auto;
+    margin-bottom: 115px;
+}
+
+#foco img{
+    width: 178px;
+    height: 172px;
+}
+
+#foco{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 19px;
+}
+
+#foco span{
+    font-size: 70px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 
+    -2px -2px 0px black, 
+    -2px 2px 0px black,                    
+     2px -2px 0px black,                  
+     2px 0px 0px black;
+}
+
+#dices{
+    display: flex;
+    flex-direction: column;
+    gap: 22.5px;
+    margin: 14.5px 0px;
+}
+
+#res{
+    width: 95%;
+    margin: auto;
+    background-color: white;
+    border: black 2px solid;
+    border-radius: 4px;
+    padding: 26px 10px;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+
+#button-clear{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+button{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: .2s;
+    padding: 5px 25px;
+    border-radius: 4px;
+    border: black solid 2px;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2C211E;
+    padding: 40px 0px;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.432) 0px -2px 20px;
+}
+
+footer ul li{
+    list-style: none;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: white;
+}
+footer ul li span {
+    color: rgb(114, 114, 114);
+}
+
+hr{
+    height: 80px;
+}
+
+button:hover{
+    background-color: rgb(44, 28, 28);
+    box-shadow: black 0px 1px 10px;
+    border: white 2px solid;
+    color: white;
+}
+
+nav ul a:hover{
+    background-color: white;
+    border: black 2px solid;
+    color: black;
+}
