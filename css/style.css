@@ -64,6 +64,25 @@ main h1{
     height: 172px;
 }
 
+#amount{
+    width: 80px;
+    height: 60px;
+    font-weight: bold;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 40px;
+    border: 2px solid black;
+    outline: none;
+    transform: scale(1.1);
+    transition: .3s;
+    box-shadow: black 1px 1px 10px;
+    text-align: center;
+}
+
+#amount:hover{
+    transform: scale(1.0);
+    box-shadow: black 0px 0px 0px;
+}
+
 #foco{
     display: flex;
     justify-content: space-between;
@@ -84,18 +103,19 @@ main h1{
 
 #dices{
     display: flex;
-    flex-direction: column;
+    max-width: 220px;
+    flex-wrap: wrap;
     gap: 22.5px;
     margin: 14.5px 0px;
 }
 
 #res{
-    width: 95%;
+    width: 100%;
     margin: auto;
     background-color: white;
     border: black 2px solid;
     border-radius: 4px;
-    padding: 26px 10px;
+    padding: 10px 0px 100px 0px;
     font-weight: bold;
     font-size: 40px;
     text-align: center;
@@ -109,6 +129,7 @@ main h1{
 }
 
 button{
+    width: 95px;
     cursor: pointer;
     font-weight: bold;
     font-size: 20px;
@@ -119,7 +140,6 @@ button{
 }
 
 footer{
-    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
