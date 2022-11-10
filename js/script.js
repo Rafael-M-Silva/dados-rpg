@@ -6,6 +6,9 @@ var button12 = document.querySelector("#d12")
 var button20 = document.querySelector("#d20")
 var button100 = document.querySelector("#d100")
 let amount = document.querySelector("#amount")
+let modificador = document.querySelector("#modificador")
+const audio = document.querySelector("audio")
+
 
 
 
@@ -27,34 +30,37 @@ button4.addEventListener("click", ()=>{
     var dado4Ramdom9 = Math.floor((Math.random() * 4) + 1)
     var dado4Ramdom10 = Math.floor((Math.random() * 4) + 1)
     let quantidadeDado = Number(amount.value)
+    let modificadorCon = Number(modificador.value)
+    audio.play()
+
     res.style.background = 'white'
-    if (quantidadeDado <= 0){
+    if (quantidadeDado <= -1){
         window.alert("[ERRO] Dados Invalidos")
     }else if(quantidadeDado > 10){
         window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 1){
+    }else if(quantidadeDado == 0 | quantidadeDado == 1){
         res.innerHTML = `(${dado4Ramdom1})`
         if(dado4Ramdom1 == 1){
             res.style.background = 'red'
         }
     }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2}) = ${dado4Ramdom1 + dado4Ramdom2}`
+        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2}) = ${dado4Ramdom1 + dado4Ramdom2 + modificadorCon}`
     }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3}`
+        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + modificadorCon}`
     }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4}`
+        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + modificadorCon}`
     }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5}`
+        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + modificadorCon}`
     }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6}`
+        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + modificadorCon}`
     }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6} + ${dado4Ramdom7}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + dado4Ramdom7}`
+        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6} + ${dado4Ramdom7}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + dado4Ramdom7 + modificadorCon}`
     }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6} + ${dado4Ramdom7} + ${dado4Ramdom8}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + dado4Ramdom7 + dado4Ramdom8}`
+        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6} + ${dado4Ramdom7} + ${dado4Ramdom8}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + dado4Ramdom7 + dado4Ramdom8 + modificadorCon}`
     }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6} + ${dado4Ramdom7} + ${dado4Ramdom8} + ${dado4Ramdom9}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + dado4Ramdom7 + dado4Ramdom8 + dado4Ramdom9}`
+        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6} + ${dado4Ramdom7} + ${dado4Ramdom8} + ${dado4Ramdom9}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + dado4Ramdom7 + dado4Ramdom8 + dado4Ramdom9 + modificadorCon}`
     }else{
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6} + ${dado4Ramdom7} + ${dado4Ramdom8} + ${dado4Ramdom9} + ${dado4Ramdom10}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + dado4Ramdom7 + dado4Ramdom8 + dado4Ramdom9 + dado4Ramdom10}`
+        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6} + ${dado4Ramdom7} + ${dado4Ramdom8} + ${dado4Ramdom9} + ${dado4Ramdom10}) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + dado4Ramdom7 + dado4Ramdom8 + dado4Ramdom9 + dado4Ramdom10 + modificadorCon}`
     }
 })
 
@@ -70,34 +76,37 @@ button6.addEventListener("click", ()=>{
     var dado6Ramdom9 = Math.floor((Math.random() * 6) + 1)
     var dado6Ramdom10 = Math.floor((Math.random() * 6) + 1)
     let quantidadeDado = Number(amount.value)
+    let modificadorCon = Number(modificador.value)
+    audio.play()
     res.style.background = 'white'
-    if (quantidadeDado <= 0){
+    if (quantidadeDado <= -1){
         window.alert("[ERRO] Dados Invalidos")
     }else if(quantidadeDado > 10){
         window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 1){
+    }else if(quantidadeDado == 0 | quantidadeDado == 1){
+        res.style.transition = '1s';
         res.innerHTML = `(${dado6Ramdom1})`
         if(dado6Ramdom1 == 1){
             res.style.background = 'red'
         }
     }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2}) = ${dado6Ramdom1 + dado6Ramdom2}`
+        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2}) = ${dado6Ramdom1 + dado6Ramdom2 + modificadorCon}`
     }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3}`
+        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + modificadorCon}`
     }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4}`
+        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + modificadorCon}`
     }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5}`
+        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + modificadorCon}`
     }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6}`
+        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + modificadorCon}`
     }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6} + ${dado6Ramdom7}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + dado6Ramdom7}`
+        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6} + ${dado6Ramdom7}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + dado6Ramdom7 + modificadorCon}`
     }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6} + ${dado6Ramdom7} + ${dado6Ramdom8}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + dado6Ramdom7 + dado6Ramdom8}`
+        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6} + ${dado6Ramdom7} + ${dado6Ramdom8}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + dado6Ramdom7 + dado6Ramdom8 + modificadorCon}`
     }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6} + ${dado6Ramdom7} + ${dado6Ramdom8} + ${dado6Ramdom9}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + dado6Ramdom7 + dado6Ramdom8 + dado6Ramdom9}`
+        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6} + ${dado6Ramdom7} + ${dado6Ramdom8} + ${dado6Ramdom9}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + dado6Ramdom7 + dado6Ramdom8 + dado6Ramdom9 + modificadorCon}`
     }else{
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6} + ${dado6Ramdom7} + ${dado6Ramdom8} + ${dado6Ramdom9} + ${dado6Ramdom10}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + dado6Ramdom7 + dado6Ramdom8 + dado6Ramdom9 + dado6Ramdom10}`
+        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6} + ${dado6Ramdom7} + ${dado6Ramdom8} + ${dado6Ramdom9} + ${dado6Ramdom10}) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + dado6Ramdom7 + dado6Ramdom8 + dado6Ramdom9 + dado6Ramdom10 + modificadorCon}`
     }
 })
 
@@ -113,34 +122,36 @@ button8.addEventListener("click", ()=>{
     var dado8Ramdom9 = Math.floor((Math.random() * 8) + 1)
     var dado8Ramdom10 = Math.floor((Math.random() * 8) + 1)
     let quantidadeDado = Number(amount.value)
+    let modificadorCon = Number(modificador.value)
+    audio.play()
     res.style.background = 'white'
-    if (quantidadeDado <= 0){
+    if (quantidadeDado <= -1){
         window.alert("[ERRO] Dados Invalidos")
     }else if(quantidadeDado > 10){
         window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 1){
-        res.innerHTML = `(${dado8Ramdom1})`
+    }else if(quantidadeDado == 0 | quantidadeDado == 1){
+        res.innerHTML = `(${dado8Ramdom1 + modificadorCon})`
         if(dado8Ramdom1 == 1){
             res.style.background = 'red'
         }
     }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2}) = ${dado8Ramdom1 + dado8Ramdom2}`
+        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2}) = ${dado8Ramdom1 + dado8Ramdom2 + modificadorCon}`
     }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3}`
+        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + modificadorCon}`
     }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4}`
+        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + modificadorCon}`
     }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5}`
+        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + modificadorCon}`
     }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6}`
+        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + modificadorCon}`
     }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6} + ${dado8Ramdom7}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + dado8Ramdom7}`
+        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6} + ${dado8Ramdom7}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + dado8Ramdom7 + modificadorCon}`
     }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6} + ${dado8Ramdom7} + ${dado8Ramdom8}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + dado8Ramdom7 + dado8Ramdom8}`
+        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6} + ${dado8Ramdom7} + ${dado8Ramdom8}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + dado8Ramdom7 + dado8Ramdom8 + modificadorCon}`
     }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6} + ${dado8Ramdom7} + ${dado8Ramdom8} + ${dado8Ramdom9}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + dado8Ramdom7 + dado8Ramdom8 + dado8Ramdom9}`
+        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6} + ${dado8Ramdom7} + ${dado8Ramdom8} + ${dado8Ramdom9}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + dado8Ramdom7 + dado8Ramdom8 + dado8Ramdom9 + modificadorCon}`
     }else{
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6} + ${dado8Ramdom7} + ${dado8Ramdom8} + ${dado8Ramdom9} + ${dado8Ramdom10}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + dado8Ramdom7 + dado8Ramdom8 + dado8Ramdom9 + dado8Ramdom10}`
+        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6} + ${dado8Ramdom7} + ${dado8Ramdom8} + ${dado8Ramdom9} + ${dado8Ramdom10}) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + dado8Ramdom7 + dado8Ramdom8 + dado8Ramdom9 + dado8Ramdom10 + modificadorCon}`
     }
 })
 
@@ -156,34 +167,36 @@ button10.addEventListener("click", ()=>{
     var dado10Ramdom9 = Math.floor((Math.random() * 10) + 1)
     var dado10Ramdom10 = Math.floor((Math.random() * 10) + 1)
     let quantidadeDado = Number(amount.value)
+    let modificadorCon = Number(modificador.value)
+    audio.play()
     res.style.background = 'white'
-    if (quantidadeDado <= 0){
+    if (quantidadeDado <= -1){
         window.alert("[ERRO] Dados Invalidos")
     }else if(quantidadeDado > 10){
         window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 1){
-        res.innerHTML = `(${dado10Ramdom1})`
+    }else if(quantidadeDado == 0 | quantidadeDado == 1){
+        res.innerHTML = `(${dado10Ramdom1 + modificadorCon})`
         if(dado10Ramdom1 == 1){
             res.style.background = 'red'
         }
     }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2}) = ${dado10Ramdom1 + dado10Ramdom2}`
+        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2}) = ${dado10Ramdom1 + dado10Ramdom2 + modificadorCon}`
     }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3}`
+        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + modificadorCon}`
     }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4}`
+        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + modificadorCon}`
     }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5}`
+        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + modificadorCon}`
     }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6}`
+        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + modificadorCon}`
     }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6} + ${dado10Ramdom7}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + dado10Ramdom7}`
+        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6} + ${dado10Ramdom7}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + dado10Ramdom7 + modificadorCon}`
     }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6} + ${dado10Ramdom7} + ${dado10Ramdom8}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + dado10Ramdom7 + dado10Ramdom8}`
+        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6} + ${dado10Ramdom7} + ${dado10Ramdom8}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + dado10Ramdom7 + dado10Ramdom8 + modificadorCon}`
     }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6} + ${dado10Ramdom7} + ${dado10Ramdom8} + ${dado10Ramdom9}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + dado10Ramdom7 + dado10Ramdom8 + dado10Ramdom9}`
+        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6} + ${dado10Ramdom7} + ${dado10Ramdom8} + ${dado10Ramdom9}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + dado10Ramdom7 + dado10Ramdom8 + dado10Ramdom9 + modificadorCon}`
     }else{
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6} + ${dado10Ramdom7} + ${dado10Ramdom8} + ${dado10Ramdom9} + ${dado10Ramdom10}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + dado10Ramdom7 + dado10Ramdom8 + dado10Ramdom9 + dado10Ramdom10}`
+        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6} + ${dado10Ramdom7} + ${dado10Ramdom8} + ${dado10Ramdom9} + ${dado10Ramdom10}) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + dado10Ramdom7 + dado10Ramdom8 + dado10Ramdom9 + dado10Ramdom10 + modificadorCon}`
     }
 })
 
@@ -199,34 +212,36 @@ button12.addEventListener("click", ()=>{
     var dado12Ramdom9 = Math.floor((Math.random() * 12) + 1)
     var dado12Ramdom10 = Math.floor((Math.random() * 12) + 1)
     let quantidadeDado = Number(amount.value)
+    let modificadorCon = Number(modificador.value)
+    audio.play()
     res.style.background = 'white'
-    if (quantidadeDado <= 0){
+    if (quantidadeDado <= -1){
         window.alert("[ERRO] Dados Invalidos")
     }else if(quantidadeDado > 10){
         window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 1){
-        res.innerHTML = `(${dado12Ramdom1})`
+    }else if(quantidadeDado == 0 | quantidadeDado == 1){
+        res.innerHTML = `(${dado12Ramdom1 + modificadorCon})`
         if(dado12Ramdom1 == 1){
             res.style.background = 'red'
         }
     }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2}) = ${dado12Ramdom1 + dado12Ramdom2}`
+        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2}) = ${dado12Ramdom1 + dado12Ramdom2 + modificadorCon}`
     }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3}`
+        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + modificadorCon}`
     }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4}`
+        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + modificadorCon}`
     }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5}`
+        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + modificadorCon}`
     }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6}`
+        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + modificadorCon}`
     }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6} + ${dado12Ramdom7}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + dado12Ramdom7}`
+        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6} + ${dado12Ramdom7}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + dado12Ramdom7 + modificadorCon}`
     }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6} + ${dado12Ramdom7} + ${dado12Ramdom8}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + dado12Ramdom7 + dado12Ramdom8}`
+        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6} + ${dado12Ramdom7} + ${dado12Ramdom8}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + dado12Ramdom7 + dado12Ramdom8 + modificadorCon}`
     }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6} + ${dado12Ramdom7} + ${dado12Ramdom8} + ${dado12Ramdom9}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + dado12Ramdom7 + dado12Ramdom8 + dado12Ramdom9}`
+        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6} + ${dado12Ramdom7} + ${dado12Ramdom8} + ${dado12Ramdom9}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + dado12Ramdom7 + dado12Ramdom8 + dado12Ramdom9 + modificadorCon}`
     }else{
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6} + ${dado12Ramdom7} + ${dado12Ramdom8} + ${dado12Ramdom9} + ${dado12Ramdom10}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + dado12Ramdom7 + dado12Ramdom8 + dado12Ramdom9 + dado12Ramdom10}`
+        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6} + ${dado12Ramdom7} + ${dado12Ramdom8} + ${dado12Ramdom9} + ${dado12Ramdom10}) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + dado12Ramdom7 + dado12Ramdom8 + dado12Ramdom9 + dado12Ramdom10 + modificadorCon}`
     }
 })
 
@@ -242,34 +257,36 @@ button20.addEventListener("click", ()=>{
     var dado20Ramdom9 = Math.floor((Math.random() * 20) + 1)
     var dado20Ramdom10 = Math.floor((Math.random() * 20) + 1)
     let quantidadeDado = Number(amount.value)
+    let modificadorCon = Number(modificador.value)
+    audio.play()
     res.style.background = 'white'
-    if (quantidadeDado <= 0){
+    if (quantidadeDado <= -1){
         window.alert("[ERRO] Dados Invalidos")
     }else if(quantidadeDado > 10){
         window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 1){
-        res.innerHTML = `(${dado20Ramdom1})`
+    }else if(quantidadeDado == 0 | quantidadeDado == 1){
+        res.innerHTML = `(${dado20Ramdom1 + modificadorCon})`
         if(dado20Ramdom1 == 1){
             res.innerHTML += '<p>FALHA CRITICA!</p>'
         }
     }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2}) = ${dado20Ramdom1 + dado20Ramdom2}`
+        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2}) = ${dado20Ramdom1 + dado20Ramdom2 + modificadorCon}`
     }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3}`
+        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + modificadorCon}`
     }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4}`
+        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + modificadorCon}`
     }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5}`
+        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + modificadorCon}`
     }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6}`
+        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + modificadorCon}`
     }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6} + ${dado20Ramdom7}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + dado20Ramdom7}`
+        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6} + ${dado20Ramdom7}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + dado20Ramdom7 + modificadorCon}`
     }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6} + ${dado20Ramdom7} + ${dado20Ramdom8}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + dado20Ramdom7 + dado20Ramdom8}`
+        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6} + ${dado20Ramdom7} + ${dado20Ramdom8}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + dado20Ramdom7 + dado20Ramdom8 + modificadorCon}`
     }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6} + ${dado20Ramdom7} + ${dado20Ramdom8} + ${dado20Ramdom9}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + dado20Ramdom7 + dado20Ramdom8 + dado20Ramdom9}`
+        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6} + ${dado20Ramdom7} + ${dado20Ramdom8} + ${dado20Ramdom9}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + dado20Ramdom7 + dado20Ramdom8 + dado20Ramdom9 + modificadorCon}`
     }else{
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6} + ${dado20Ramdom7} + ${dado20Ramdom8} + ${dado20Ramdom9} + ${dado20Ramdom10}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + dado20Ramdom7 + dado20Ramdom8 + dado20Ramdom9 + dado20Ramdom10}`
+        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6} + ${dado20Ramdom7} + ${dado20Ramdom8} + ${dado20Ramdom9} + ${dado20Ramdom10}) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + dado20Ramdom7 + dado20Ramdom8 + dado20Ramdom9 + dado20Ramdom10 + modificadorCon}`
     }
 })
 
@@ -285,34 +302,36 @@ button100.addEventListener("click", ()=>{
     var dado100Ramdom9 = Math.floor((Math.random() * 100) + 1)
     var dado100Ramdom10 = Math.floor((Math.random() * 100) + 1)
     let quantidadeDado = Number(amount.value)
+    let modificadorCon = Number(modificador.value)
+    audio.play()
     res.style.background = 'white'
-    if (quantidadeDado <= 0){
+    if (quantidadeDado <= -1){
         window.alert("[ERRO] Dados Invalidos")
     }else if(quantidadeDado > 10){
         window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 1){
-        res.innerHTML = `(${dado100Ramdom1})`
+    }else if(quantidadeDado == 0 | quantidadeDado == 1){
+        res.innerHTML = `(${dado100Ramdom1 + modificadorCon})`
         if(dado100Ramdom1 == 1){
             res.style.background = 'red'
         }
     }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2}) = ${dado100Ramdom1 + dado100Ramdom2}`
+        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2}) = ${dado100Ramdom1 + dado100Ramdom2 + modificadorCon}`
     }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3}`
+        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + modificadorCon}`
     }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4}`
+        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + modificadorCon}`
     }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5}`
+        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + modificadorCon}`
     }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6}`
+        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + modificadorCon}`
     }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6} + ${dado100Ramdom7}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + dado100Ramdom7}`
+        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6} + ${dado100Ramdom7}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + dado100Ramdom7 + modificadorCon}`
     }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6} + ${dado100Ramdom7} + ${dado100Ramdom8}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + dado100Ramdom7 + dado100Ramdom8}`
+        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6} + ${dado100Ramdom7} + ${dado100Ramdom8}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + dado100Ramdom7 + dado100Ramdom8 + modificadorCon}`
     }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6} + ${dado100Ramdom7} + ${dado100Ramdom8} + ${dado100Ramdom9}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + dado100Ramdom7 + dado100Ramdom8 + dado100Ramdom9}`
+        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6} + ${dado100Ramdom7} + ${dado100Ramdom8} + ${dado100Ramdom9}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + dado100Ramdom7 + dado100Ramdom8 + dado100Ramdom9 + modificadorCon}`
     }else{
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6} + ${dado100Ramdom7} + ${dado100Ramdom8} + ${dado100Ramdom9} + ${dado100Ramdom10}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + dado100Ramdom7 + dado100Ramdom8 + dado100Ramdom9 + dado100Ramdom10}`
+        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6} + ${dado100Ramdom7} + ${dado100Ramdom8} + ${dado100Ramdom9} + ${dado100Ramdom10}) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + dado100Ramdom7 + dado100Ramdom8 + dado100Ramdom9 + dado100Ramdom10 + modificadorCon}`
     }
 })
 

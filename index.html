@@ -25,7 +25,12 @@
         <div id="box">
             <div id="foco">
                 <span id="res2"></span>
-                <input type="number" name="amount" id="amount">
+                <div id="input-dados">
+                    <label for="quantiDados">Quantidade de dados</label>
+                    <input class="input-dados" type="number" name="amount" id="amount">
+                    <label for="modifica">Modificador</label>
+                    <input class="input-dados" type="number" name="modificador" id="modificador">
+                </div>
                 <div id="dices">
                     <button id="d4">d4</button>
                     <button id="d6">d6</button>
@@ -34,10 +39,10 @@
                     <button id="d12">d12</button>
                     <button id="d20">d20</button>
                     <button id="d100">d100</button>
+                    <audio src="./sound/dice.mp3"></audio>
                 </div>
             </div>
                 <div id="res">
-
                 </div>
             <div id="button-clear">
                 <button>clear</button>
