@@ -50,8 +50,8 @@ main h1{
               1px 0px 0px black;
 }
 
-#box{
-    background-color: #2c211ec0;
+.box{
+    background-color: #2c211e27;
     width: 588px;
     border: black 2px solid;
     border-radius: 4px;
@@ -120,10 +120,13 @@ main h1{
     gap: 10px;
 }
 
-
+header nav ul li img{
+    width: 30px;
+    cursor: pointer;
+}
 
 #res{
-    width: 100%;
+    width: 98%;
     margin: auto;
     background-color: white;
     border: black 2px solid;
@@ -132,6 +135,10 @@ main h1{
     font-weight: bold;
     font-size: 30px;
     text-align: center;
+}
+
+.modificador{
+    color: blue;
 }
 
 
@@ -181,7 +188,7 @@ hr{
 }
 
 button:hover{
-    background-color: rgb(44, 28, 28);
+    background-color: rgb(0, 0, 0);
     box-shadow: black 0px 1px 10px;
     border: white 2px solid;
     color: white;
@@ -192,3 +199,27 @@ nav ul a:hover{
     border: black 2px solid;
     color: black;
 }
+
+#modificador{
+    color: blue;
+}
+
+.theme-dark-bg{
+    background: #323231;
+}
+
+.theme-dark-bg-header-footer{
+    background: #1D1D1D;
+}
+
+#theme-dark-bg-main{
+    background-color: #1D1D1D;
+}
+
+.theme-dark-button{
+    background-color: #0D0D0D;
+    color: #50FD95;
+    border: 2px #50FD95 solid;
+    box-shadow:  0px 4px 4px #65ebaa63;
+}
+
