@@ -5,348 +5,96 @@ var button10 = document.querySelector("#d10")
 var button12 = document.querySelector("#d12")
 var button20 = document.querySelector("#d20")
 var button100 = document.querySelector("#d100")
-let amount = document.querySelector("#amount")
-let modificador = document.querySelector("#modificador")
-const audio = document.querySelector("audio")
-
-
-
-
-let res = document.querySelector("#res")
-let clear = document.querySelector("#button-clear")
-let res2 = document.querySelector("#res2")
-
-
-button4.addEventListener("click", ()=>{
-    var dado4Ramdom1 = Math.floor((Math.random() * 4) + 1)
-    var dado4Ramdom2 = Math.floor((Math.random() * 4) + 1)
-    var dado4Ramdom3 = Math.floor((Math.random() * 4) + 1)
-    var dado4Ramdom4 = Math.floor((Math.random() * 4) + 1)
-    var dado4Ramdom5 = Math.floor((Math.random() * 4) + 1)
-    var dado4Ramdom6 = Math.floor((Math.random() * 4) + 1)
-    var dado4Ramdom7 = Math.floor((Math.random() * 4) + 1)
-    var dado4Ramdom8 = Math.floor((Math.random() * 4) + 1)
-    var dado4Ramdom9 = Math.floor((Math.random() * 4) + 1)
-    var dado4Ramdom10 = Math.floor((Math.random() * 4) + 1)
-    let quantidadeDado = Number(amount.value)
-    let modificadorCon = Number(modificador.value)
-    audio.play()
-
-    res.style.background = 'white'
-    if (quantidadeDado <= -1){
-        window.alert("[ERRO] Dados Invalidos")
-    }else if(quantidadeDado > 10){
-        window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 0 | quantidadeDado == 1){
-        res.innerHTML = `(${dado4Ramdom1} + <span class="modificador">${modificadorCon}</span> = ${dado4Ramdom1 + modificadorCon})`
-        if(dado4Ramdom1 == 1){
-            res.style.background = 'red'
-        }
-    }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + <span class="modificador">${modificadorCon}</span>) = ${dado4Ramdom1 + dado4Ramdom2 + modificadorCon}`
-    }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + <span class="modificador">${modificadorCon}</span>) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + modificadorCon}`
-    }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + <span class="modificador">${modificadorCon}</span>) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + modificadorCon}`
-    }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + <span class="modificador">${modificadorCon}</span>) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + modificadorCon}`
-    }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6} + <span class="modificador">${modificadorCon}</span>) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + modificadorCon}`
-    }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6} + ${dado4Ramdom7} + <span class="modificador">${modificadorCon}</span>) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + dado4Ramdom7 + modificadorCon}`
-    }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6} + ${dado4Ramdom7} + ${dado4Ramdom8} + <span class="modificador">${modificadorCon}</span>) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + dado4Ramdom7 + dado4Ramdom8 + modificadorCon}`
-    }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6} + ${dado4Ramdom7} + ${dado4Ramdom8} + ${dado4Ramdom9} + <span class="modificador">${modificadorCon}</span>) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + dado4Ramdom7 + dado4Ramdom8 + dado4Ramdom9 + modificadorCon}`
-    }else{
-        res.innerHTML = `(${dado4Ramdom1} + ${dado4Ramdom2} + ${dado4Ramdom3} + ${dado4Ramdom4} + ${dado4Ramdom5} + ${dado4Ramdom6} + ${dado4Ramdom7} + ${dado4Ramdom8} + ${dado4Ramdom9} + ${dado4Ramdom10} + <span class="modificador">${modificadorCon}</span>) = ${dado4Ramdom1 + dado4Ramdom2 + dado4Ramdom3 + dado4Ramdom4 + dado4Ramdom5 + dado4Ramdom6 + dado4Ramdom7 + dado4Ramdom8 + dado4Ramdom9 + dado4Ramdom10 + modificadorCon}`
-    }
-    
-})
-
-button6.addEventListener("click", ()=>{
-    var dado6Ramdom1 = Math.floor((Math.random() * 6) + 1)
-    var dado6Ramdom2 = Math.floor((Math.random() * 6) + 1)
-    var dado6Ramdom3 = Math.floor((Math.random() * 6) + 1)
-    var dado6Ramdom4 = Math.floor((Math.random() * 6) + 1)
-    var dado6Ramdom5 = Math.floor((Math.random() * 6) + 1)
-    var dado6Ramdom6 = Math.floor((Math.random() * 6) + 1)
-    var dado6Ramdom7 = Math.floor((Math.random() * 6) + 1)
-    var dado6Ramdom8 = Math.floor((Math.random() * 6) + 1)
-    var dado6Ramdom9 = Math.floor((Math.random() * 6) + 1)
-    var dado6Ramdom10 = Math.floor((Math.random() * 6) + 1)
-    let quantidadeDado = Number(amount.value)
-    let modificadorCon = Number(modificador.value)
-    audio.play()
-    res.style.background = 'white'
-    if (quantidadeDado <= -1){
-        window.alert("[ERRO] Dados Invalidos")
-    }else if(quantidadeDado > 10){
-        window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 0 | quantidadeDado == 1){
-        res.style.transition = '1s';
-        res.innerHTML = `(${dado6Ramdom1} + <span class="modificador">${modificadorCon}</span> = ${dado6Ramdom1 + modificadorCon})`
-        if(dado6Ramdom1 == 1){
-            res.style.background = 'red'
-        }
-    }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + <span class="modificador">${modificadorCon}</span>) = ${dado6Ramdom1 + dado6Ramdom2 + modificadorCon}`
-    }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + <span class="modificador">${modificadorCon}</span>) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + modificadorCon}`
-    }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + <span class="modificador">${modificadorCon}</span>) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + modificadorCon}`
-    }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + <span class="modificador">${modificadorCon}</span>) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + modificadorCon}`
-    }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6} + <span class="modificador">${modificadorCon}</span>) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + modificadorCon}`
-    }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6} + ${dado6Ramdom7} + <span class="modificador">${modificadorCon}</span>) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + dado6Ramdom7 + modificadorCon}`
-    }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6} + ${dado6Ramdom7} + ${dado6Ramdom8} + <span class="modificador">${modificadorCon}</span>) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + dado6Ramdom7 + dado6Ramdom8 + modificadorCon}`
-    }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6} + ${dado6Ramdom7} + ${dado6Ramdom8} + ${dado6Ramdom9} + <span class="modificador">${modificadorCon}</span>) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + dado6Ramdom7 + dado6Ramdom8 + dado6Ramdom9 + modificadorCon}`
-    }else{
-        res.innerHTML = `(${dado6Ramdom1} + ${dado6Ramdom2} + ${dado6Ramdom3} + ${dado6Ramdom4} + ${dado6Ramdom5} + ${dado6Ramdom6} + ${dado6Ramdom7} + ${dado6Ramdom8} + ${dado6Ramdom9} + ${dado6Ramdom10} + <span class="modificador">${modificadorCon}</span>) = ${dado6Ramdom1 + dado6Ramdom2 + dado6Ramdom3 + dado6Ramdom4 + dado6Ramdom5 + dado6Ramdom6 + dado6Ramdom7 + dado6Ramdom8 + dado6Ramdom9 + dado6Ramdom10 + modificadorCon}`
-    }
-})
-
-button8.addEventListener("click", ()=>{
-    var dado8Ramdom1 = Math.floor((Math.random() * 8) + 1)
-    var dado8Ramdom2 = Math.floor((Math.random() * 8) + 1)
-    var dado8Ramdom3 = Math.floor((Math.random() * 8) + 1)
-    var dado8Ramdom4 = Math.floor((Math.random() * 8) + 1)
-    var dado8Ramdom5 = Math.floor((Math.random() * 8) + 1)
-    var dado8Ramdom6 = Math.floor((Math.random() * 8) + 1)
-    var dado8Ramdom7 = Math.floor((Math.random() * 8) + 1)
-    var dado8Ramdom8 = Math.floor((Math.random() * 8) + 1)
-    var dado8Ramdom9 = Math.floor((Math.random() * 8) + 1)
-    var dado8Ramdom10 = Math.floor((Math.random() * 8) + 1)
-    let quantidadeDado = Number(amount.value)
-    let modificadorCon = Number(modificador.value)
-    audio.play()
-    res.style.background = 'white'
-    if (quantidadeDado <= -1){
-        window.alert("[ERRO] Dados Invalidos")
-    }else if(quantidadeDado > 10){
-        window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 0 | quantidadeDado == 1){
-        res.innerHTML = `(${dado8Ramdom1} + <span class="modificador">${modificadorCon}</span> = ${dado8Ramdom1 + modificadorCon})`
-        if(dado8Ramdom1 == 1){
-            res.style.background = 'red'
-        }
-    }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + <span class="modificador">${modificadorCon}</span>) = ${dado8Ramdom1 + dado8Ramdom2 + modificadorCon}`
-    }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + <span class="modificador">${modificadorCon}</span>) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + modificadorCon}`
-    }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + <span class="modificador">${modificadorCon}</span>) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + modificadorCon}`
-    }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + <span class="modificador">${modificadorCon}</span>) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + modificadorCon}`
-    }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6} + <span class="modificador">${modificadorCon}</span>) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + modificadorCon}`
-    }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6} + ${dado8Ramdom7} + <span class="modificador">${modificadorCon}</span>) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + dado8Ramdom7 + modificadorCon}`
-    }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6} + ${dado8Ramdom7} + ${dado8Ramdom8} + <span class="modificador">${modificadorCon}</span>) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + dado8Ramdom7 + dado8Ramdom8 + modificadorCon}`
-    }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6} + ${dado8Ramdom7} + ${dado8Ramdom8} + ${dado8Ramdom9} + <span class="modificador">${modificadorCon}</span>) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + dado8Ramdom7 + dado8Ramdom8 + dado8Ramdom9 + modificadorCon}`
-    }else{
-        res.innerHTML = `(${dado8Ramdom1} + ${dado8Ramdom2} + ${dado8Ramdom3} + ${dado8Ramdom4} + ${dado8Ramdom5} + ${dado8Ramdom6} + ${dado8Ramdom7} + ${dado8Ramdom8} + ${dado8Ramdom9} + ${dado8Ramdom10} + <span class="modificador">${modificadorCon}</span>) = ${dado8Ramdom1 + dado8Ramdom2 + dado8Ramdom3 + dado8Ramdom4 + dado8Ramdom5 + dado8Ramdom6 + dado8Ramdom7 + dado8Ramdom8 + dado8Ramdom9 + dado8Ramdom10 + modificadorCon}`
-    }
-})
-
-button10.addEventListener("click", ()=>{
-    var dado10Ramdom1 = Math.floor((Math.random() * 10) + 1)
-    var dado10Ramdom2 = Math.floor((Math.random() * 10) + 1)
-    var dado10Ramdom3 = Math.floor((Math.random() * 10) + 1)
-    var dado10Ramdom4 = Math.floor((Math.random() * 10) + 1)
-    var dado10Ramdom5 = Math.floor((Math.random() * 10) + 1)
-    var dado10Ramdom6 = Math.floor((Math.random() * 10) + 1)
-    var dado10Ramdom7 = Math.floor((Math.random() * 10) + 1)
-    var dado10Ramdom8 = Math.floor((Math.random() * 10) + 1)
-    var dado10Ramdom9 = Math.floor((Math.random() * 10) + 1)
-    var dado10Ramdom10 = Math.floor((Math.random() * 10) + 1)
-    let quantidadeDado = Number(amount.value)
-    let modificadorCon = Number(modificador.value)
-    audio.play()
-    res.style.background = 'white'
-    if (quantidadeDado <= -1){
-        window.alert("[ERRO] Dados Invalidos")
-    }else if(quantidadeDado > 10){
-        window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 0 | quantidadeDado == 1){
-        res.innerHTML = `(${dado10Ramdom1} + <span class="modificador">${modificadorCon}</span> = ${dado10Ramdom1 + modificadorCon})`
-        if(dado10Ramdom1 == 1){
-            res.style.background = 'red'
-        }
-    }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + <span class="modificador">${modificadorCon}</span>) = ${dado10Ramdom1 + dado10Ramdom2 + modificadorCon}`
-    }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + <span class="modificador">${modificadorCon}</span>) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + modificadorCon}`
-    }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + <span class="modificador">${modificadorCon}</span>) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + modificadorCon}`
-    }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + <span class="modificador">${modificadorCon}</span>) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + modificadorCon}`
-    }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6} + <span class="modificador">${modificadorCon}</span>) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + modificadorCon}`
-    }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6} + ${dado10Ramdom7} + <span class="modificador">${modificadorCon}</span>) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + dado10Ramdom7 + modificadorCon}`
-    }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6} + ${dado10Ramdom7} + ${dado10Ramdom8} + <span class="modificador">${modificadorCon}</span>) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + dado10Ramdom7 + dado10Ramdom8 + modificadorCon}`
-    }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6} + ${dado10Ramdom7} + ${dado10Ramdom8} + ${dado10Ramdom9} + <span class="modificador">${modificadorCon}</span>) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + dado10Ramdom7 + dado10Ramdom8 + dado10Ramdom9 + modificadorCon}`
-    }else{
-        res.innerHTML = `(${dado10Ramdom1} + ${dado10Ramdom2} + ${dado10Ramdom3} + ${dado10Ramdom4} + ${dado10Ramdom5} + ${dado10Ramdom6} + ${dado10Ramdom7} + ${dado10Ramdom8} + ${dado10Ramdom9} + ${dado10Ramdom10} + <span class="modificador">${modificadorCon}</span>) = ${dado10Ramdom1 + dado10Ramdom2 + dado10Ramdom3 + dado10Ramdom4 + dado10Ramdom5 + dado10Ramdom6 + dado10Ramdom7 + dado10Ramdom8 + dado10Ramdom9 + dado10Ramdom10 + modificadorCon}`
-    }
-})
-
-button12.addEventListener("click", ()=>{
-    var dado12Ramdom1 = Math.floor((Math.random() * 12) + 1)
-    var dado12Ramdom2 = Math.floor((Math.random() * 12) + 1)
-    var dado12Ramdom3 = Math.floor((Math.random() * 12) + 1)
-    var dado12Ramdom4 = Math.floor((Math.random() * 12) + 1)
-    var dado12Ramdom5 = Math.floor((Math.random() * 12) + 1)
-    var dado12Ramdom6 = Math.floor((Math.random() * 12) + 1)
-    var dado12Ramdom7 = Math.floor((Math.random() * 12) + 1)
-    var dado12Ramdom8 = Math.floor((Math.random() * 12) + 1)
-    var dado12Ramdom9 = Math.floor((Math.random() * 12) + 1)
-    var dado12Ramdom10 = Math.floor((Math.random() * 12) + 1)
-    let quantidadeDado = Number(amount.value)
-    let modificadorCon = Number(modificador.value)
-    audio.play()
-    res.style.background = 'white'
-    if (quantidadeDado <= -1){
-        window.alert("[ERRO] Dados Invalidos")
-    }else if(quantidadeDado > 10){
-        window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 0 | quantidadeDado == 1){
-        res.innerHTML = `(${dado12Ramdom1} + <span class="modificador">${modificadorCon}</span> = ${dado12Ramdom1 + modificadorCon})`
-        if(dado12Ramdom1 == 1){
-            res.style.background = 'red'
-        }
-    }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + <span class="modificador">${modificadorCon}</span>) = ${dado12Ramdom1 + dado12Ramdom2 + modificadorCon}`
-    }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + <span class="modificador">${modificadorCon}</span>) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + modificadorCon}`
-    }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + <span class="modificador">${modificadorCon}</span>) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + modificadorCon}`
-    }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + <span class="modificador">${modificadorCon}</span>) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + modificadorCon}`
-    }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6} + <span class="modificador">${modificadorCon}</span>) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + modificadorCon}`
-    }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6} + ${dado12Ramdom7} + <span class="modificador">${modificadorCon}</span>) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + dado12Ramdom7 + modificadorCon}`
-    }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6} + ${dado12Ramdom7} + ${dado12Ramdom8} + <span class="modificador">${modificadorCon}</span>) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + dado12Ramdom7 + dado12Ramdom8 + modificadorCon}`
-    }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6} + ${dado12Ramdom7} + ${dado12Ramdom8} + ${dado12Ramdom9} + <span class="modificador">${modificadorCon}</span>) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + dado12Ramdom7 + dado12Ramdom8 + dado12Ramdom9 + modificadorCon}`
-    }else{
-        res.innerHTML = `(${dado12Ramdom1} + ${dado12Ramdom2} + ${dado12Ramdom3} + ${dado12Ramdom4} + ${dado12Ramdom5} + ${dado12Ramdom6} + ${dado12Ramdom7} + ${dado12Ramdom8} + ${dado12Ramdom9} + ${dado12Ramdom10} + <span class="modificador">${modificadorCon}</span>) = ${dado12Ramdom1 + dado12Ramdom2 + dado12Ramdom3 + dado12Ramdom4 + dado12Ramdom5 + dado12Ramdom6 + dado12Ramdom7 + dado12Ramdom8 + dado12Ramdom9 + dado12Ramdom10 + modificadorCon}`
-    }
-})
-
-button20.addEventListener("click", ()=>{
-    var dado20Ramdom1 = Math.floor((Math.random() * 20) + 1)
-    var dado20Ramdom2 = Math.floor((Math.random() * 20) + 1)
-    var dado20Ramdom3 = Math.floor((Math.random() * 20) + 1)
-    var dado20Ramdom4 = Math.floor((Math.random() * 20) + 1)
-    var dado20Ramdom5 = Math.floor((Math.random() * 20) + 1)
-    var dado20Ramdom6 = Math.floor((Math.random() * 20) + 1)
-    var dado20Ramdom7 = Math.floor((Math.random() * 20) + 1)
-    var dado20Ramdom8 = Math.floor((Math.random() * 20) + 1)
-    var dado20Ramdom9 = Math.floor((Math.random() * 20) + 1)
-    var dado20Ramdom10 = Math.floor((Math.random() * 20) + 1)
-    let quantidadeDado = Number(amount.value)
-    let modificadorCon = Number(modificador.value)
-    audio.play()
-    res.style.background = 'white'
-    if (quantidadeDado <= -1){
-        window.alert("[ERRO] Dados Invalidos")
-    }else if(quantidadeDado > 10){
-        window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 0 | quantidadeDado == 1){
-        res.innerHTML = `(${dado20Ramdom1} + <span class="modificador">${modificadorCon}</span> = ${dado20Ramdom1 + modificadorCon})`
-        if(dado20Ramdom1 == 1){
-            res.innerHTML += '<p>FALHA CRITICA!</p>'
-        }
-    }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + <span class="modificador">${modificadorCon}</span>) = ${dado20Ramdom1 + dado20Ramdom2 + modificadorCon}`
-    }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + <span class="modificador">${modificadorCon}</span>) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + modificadorCon}`
-    }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + <span class="modificador">${modificadorCon}</span>) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + modificadorCon}`
-    }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + <span class="modificador">${modificadorCon}</span>) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + modificadorCon}`
-    }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6} + <span class="modificador">${modificadorCon}</span>) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + modificadorCon}`
-    }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6} + ${dado20Ramdom7} + <span class="modificador">${modificadorCon}</span>) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + dado20Ramdom7 + modificadorCon}`
-    }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6} + ${dado20Ramdom7} + ${dado20Ramdom8} + <span class="modificador">${modificadorCon}</span>) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + dado20Ramdom7 + dado20Ramdom8 + modificadorCon}`
-    }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6} + ${dado20Ramdom7} + ${dado20Ramdom8} + ${dado20Ramdom9} + <span class="modificador">${modificadorCon}</span>) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + dado20Ramdom7 + dado20Ramdom8 + dado20Ramdom9 + modificadorCon}`
-    }else{
-        res.innerHTML = `(${dado20Ramdom1} + ${dado20Ramdom2} + ${dado20Ramdom3} + ${dado20Ramdom4} + ${dado20Ramdom5} + ${dado20Ramdom6} + ${dado20Ramdom7} + ${dado20Ramdom8} + ${dado20Ramdom9} + ${dado20Ramdom10} + <span class="modificador">${modificadorCon}</span>) = ${dado20Ramdom1 + dado20Ramdom2 + dado20Ramdom3 + dado20Ramdom4 + dado20Ramdom5 + dado20Ramdom6 + dado20Ramdom7 + dado20Ramdom8 + dado20Ramdom9 + dado20Ramdom10 + modificadorCon}`
-    }
-})
-
-button100.addEventListener("click", ()=>{
-    var dado100Ramdom1 = Math.floor((Math.random() * 100) + 1)
-    var dado100Ramdom2 = Math.floor((Math.random() * 100) + 1)
-    var dado100Ramdom3 = Math.floor((Math.random() * 100) + 1)
-    var dado100Ramdom4 = Math.floor((Math.random() * 100) + 1)
-    var dado100Ramdom5 = Math.floor((Math.random() * 100) + 1)
-    var dado100Ramdom6 = Math.floor((Math.random() * 100) + 1)
-    var dado100Ramdom7 = Math.floor((Math.random() * 100) + 1)
-    var dado100Ramdom8 = Math.floor((Math.random() * 100) + 1)
-    var dado100Ramdom9 = Math.floor((Math.random() * 100) + 1)
-    var dado100Ramdom10 = Math.floor((Math.random() * 100) + 1)
-    let quantidadeDado = Number(amount.value)
-    let modificadorCon = Number(modificador.value)
-    audio.play()
-    res.style.background = 'white'
-    if (quantidadeDado <= -1){
-        window.alert("[ERRO] Dados Invalidos")
-    }else if(quantidadeDado > 10){
-        window.alert("[ERRO] Limites de 10 dados")
-    }else if(quantidadeDado == 0 | quantidadeDado == 1){
-        res.innerHTML = `(${dado100Ramdom1} + <span class="modificador">${modificadorCon}</span> = ${dado100Ramdom1 + modificadorCon})`
-        if(dado100Ramdom1 == 1){
-            res.style.background = 'red'
-        }
-    }else if(quantidadeDado == 2){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + <span class="modificador">${modificadorCon}</span>) = ${dado100Ramdom1 + dado100Ramdom2 + modificadorCon}`
-    }else if(quantidadeDado == 3){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + <span class="modificador">${modificadorCon}</span>) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + modificadorCon}`
-    }else if(quantidadeDado == 4){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + <span class="modificador">${modificadorCon}</span>) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + modificadorCon}`
-    }else if(quantidadeDado == 5){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + <span class="modificador">${modificadorCon}</span>) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + modificadorCon}`
-    }else if(quantidadeDado == 6){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6} + <span class="modificador">${modificadorCon}</span>) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + modificadorCon}`
-    }else if(quantidadeDado == 7){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6} + ${dado100Ramdom7} + <span class="modificador">${modificadorCon}</span>) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + dado100Ramdom7 + modificadorCon}`
-    }else if(quantidadeDado == 8){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6} + ${dado100Ramdom7} + ${dado100Ramdom8} + <span class="modificador">${modificadorCon}</span>) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + dado100Ramdom7 + dado100Ramdom8 + modificadorCon}`
-    }else if(quantidadeDado == 9){
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6} + ${dado100Ramdom7} + ${dado100Ramdom8} + ${dado100Ramdom9} + <span class="modificador">${modificadorCon}</span>) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + dado100Ramdom7 + dado100Ramdom8 + dado100Ramdom9 + modificadorCon}`
-    }else{
-        res.innerHTML = `(${dado100Ramdom1} + ${dado100Ramdom2} + ${dado100Ramdom3} + ${dado100Ramdom4} + ${dado100Ramdom5} + ${dado100Ramdom6} + ${dado100Ramdom7} + ${dado100Ramdom8} + ${dado100Ramdom9} + ${dado100Ramdom10} + <span class="modificador">${modificadorCon}</span>) = ${dado100Ramdom1 + dado100Ramdom2 + dado100Ramdom3 + dado100Ramdom4 + dado100Ramdom5 + dado100Ramdom6 + dado100Ramdom7 + dado100Ramdom8 + dado100Ramdom9 + dado100Ramdom10 + modificadorCon}`
-    }
-})
-
-clear.addEventListener("click", ()=>{
-    res.innerHTML = ``
-    res.style = 'none'
-})
 
 let themeDark = document.querySelector("#theme-dark")
 let body = document.querySelector("body")
 let header = document.querySelector("header")
 let footer = document.querySelector("footer")
 let main = document.querySelector(".box")
-let  = document.querySelector("#d6")
 let buttonClear = document.querySelector("#clear")
+
+let res = document.querySelector("#res")
+let clear = document.querySelector("#button-clear")
+let res2 = document.querySelector("#res2")
+
+function playDice(dice){ 
+    const audio = document.querySelector("audio")
+    let modificador = document.querySelector("#modificador")
+    var amount = document.querySelector("#amount")
+    var diceRamdom1 = Math.floor((Math.random() * (dice)) + 1)
+    var diceRamdom2 = Math.floor((Math.random() * (dice)) + 1)
+    var diceRamdom3 = Math.floor((Math.random() * (dice)) + 1)
+    var diceRamdom4 = Math.floor((Math.random() * (dice)) + 1)
+    var diceRamdom5 = Math.floor((Math.random() * (dice)) + 1)
+    var diceRamdom6 = Math.floor((Math.random() * (dice)) + 1)
+    var diceRamdom7 = Math.floor((Math.random() * (dice)) + 1)
+    var diceRamdom8 = Math.floor((Math.random() * (dice)) + 1)
+    var diceRamdom9 = Math.floor((Math.random() * (dice)) + 1)
+    var diceRamdom10 = Math.floor((Math.random() * (dice)) + 1)
+    let quantidadeDado = Number(amount.value)
+    let modificadorCon = Number(modificador.value)
+    audio.play()
+    res.style.background = 'white'
+
+    if (quantidadeDado <= -1){
+        window.alert("[ERRO] Dados Invalidos")
+    }else if(quantidadeDado > 10){
+        window.alert("[ERRO] Limites de 10 dados")
+    }else if(quantidadeDado == 0 | quantidadeDado == 1){
+        res.innerHTML = `(${diceRamdom1} + <span class="modificador">${modificadorCon}</span> = ${diceRamdom1 + modificadorCon})`
+        if(diceRamdom1 == 1){
+            res.style.background = 'red'
+        }
+    }else if(quantidadeDado == 2){
+        res.innerHTML = `(${diceRamdom1} + ${diceRamdom2} + <span class="modificador">${modificadorCon}</span>) = ${diceRamdom1 + diceRamdom2 + modificadorCon}`
+    }else if(quantidadeDado == 3){
+        res.innerHTML = `(${diceRamdom1} + ${diceRamdom2} + ${diceRamdom3} + <span class="modificador">${modificadorCon}</span>) = ${diceRamdom1 + diceRamdom2 + diceRamdom3 + modificadorCon}`
+    }else if(quantidadeDado == 4){
+        res.innerHTML = `(${diceRamdom1} + ${diceRamdom2} + ${diceRamdom3} + ${diceRamdom4} + <span class="modificador">${modificadorCon}</span>) = ${diceRamdom1 + diceRamdom2 + diceRamdom3 + diceRamdom4 + modificadorCon}`
+    }else if(quantidadeDado == 5){
+        res.innerHTML = `(${diceRamdom1} + ${diceRamdom2} + ${diceRamdom3} + ${diceRamdom4} + ${diceRamdom5} + <span class="modificador">${modificadorCon}</span>) = ${diceRamdom1 + diceRamdom2 + diceRamdom3 + diceRamdom4 + diceRamdom5 + modificadorCon}`
+    }else if(quantidadeDado == 6){
+        res.innerHTML = `(${diceRamdom1} + ${diceRamdom2} + ${diceRamdom3} + ${diceRamdom4} + ${diceRamdom5} + ${diceRamdom6} + <span class="modificador">${modificadorCon}</span>) = ${diceRamdom1 + diceRamdom2 + diceRamdom3 + diceRamdom4 + diceRamdom5 + diceRamdom6 + modificadorCon}`
+    }else if(quantidadeDado == 7){
+        res.innerHTML = `(${diceRamdom1} + ${diceRamdom2} + ${diceRamdom3} + ${diceRamdom4} + ${diceRamdom5} + ${diceRamdom6} + ${diceRamdom7} + <span class="modificador">${modificadorCon}</span>) = ${diceRamdom1 + diceRamdom2 + diceRamdom3 + diceRamdom4 + diceRamdom5 + diceRamdom6 + diceRamdom7 + modificadorCon}`
+    }else if(quantidadeDado == 8){
+        res.innerHTML = `(${diceRamdom1} + ${diceRamdom2} + ${diceRamdom3} + ${diceRamdom4} + ${diceRamdom5} + ${diceRamdom6} + ${diceRamdom7} + ${diceRamdom8} + <span class="modificador">${modificadorCon}</span>) = ${diceRamdom1 + diceRamdom2 + diceRamdom3 + diceRamdom4 + diceRamdom5 + diceRamdom6 + diceRamdom7 + diceRamdom8 + modificadorCon}`
+    }else if(quantidadeDado == 9){
+        res.innerHTML = `(${diceRamdom1} + ${diceRamdom2} + ${diceRamdom3} + ${diceRamdom4} + ${diceRamdom5} + ${diceRamdom6} + ${diceRamdom7} + ${diceRamdom8} + ${diceRamdom9} + <span class="modificador">${modificadorCon}</span>) = ${diceRamdom1 + diceRamdom2 + diceRamdom3 + diceRamdom4 + diceRamdom5 + diceRamdom6 + diceRamdom7 + diceRamdom8 + diceRamdom9 + modificadorCon}`
+    }else{
+        res.innerHTML = `(${diceRamdom1} + ${diceRamdom2} + ${diceRamdom3} + ${diceRamdom4} + ${diceRamdom5} + ${diceRamdom6} + ${diceRamdom7} + ${diceRamdom8} + ${diceRamdom9} + ${diceRamdom10} + <span class="modificador">${modificadorCon}</span>) = ${diceRamdom1 + diceRamdom2 + diceRamdom3 + diceRamdom4 + diceRamdom5 + diceRamdom6 + diceRamdom7 + diceRamdom8 + diceRamdom9 + diceRamdom10 + modificadorCon}`
+    }
+}
+
+    button4.addEventListener("click", () => {
+        playDice(4)
+    })
+    button6.addEventListener("click", () => {
+        playDice(6)
+    })
+    button8.addEventListener("click", () => {
+        playDice(8)
+    })
+    button10.addEventListener("click", () => {
+        playDice(10)
+    })
+    button12.addEventListener("click", () => {
+        playDice(12)
+    })
+    button20.addEventListener("click", () => {
+        playDice(20)
+    })
+    button100.addEventListener("click", () => {
+        playDice(100)
+    })
+
+
+
+clear.addEventListener("click", ()=>{
+    res.innerHTML = ``
+    res.style = 'none'
+})
+
 
 
 themeDark.addEventListener("click", ()=>{
